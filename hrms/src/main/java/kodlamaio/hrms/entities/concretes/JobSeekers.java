@@ -5,19 +5,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "systempersonal")
-@PrimaryKeyJoinColumn(name="user_id")
+@Table(name = "jobseekers")
+@PrimaryKeyJoinColumn(name = "user_id")
 @AllArgsConstructor
 @NoArgsConstructor
-public class SystemPersonal extends Users{
+public class JobSeekers extends Users{
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "user_id")
-//    private int userId;
 
     @Column(name = "first_name")
     private String firstName;
@@ -29,5 +26,5 @@ public class SystemPersonal extends Users{
     private String identificationNumber;
 
     @Column(name = "birth_day")
-    private String birthDay;
+    private Date birthDay;
 }

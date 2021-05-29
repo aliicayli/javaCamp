@@ -1,9 +1,9 @@
 package kodlamaio.hrms.dataAccess.abstracts;
 
+import kodlamaio.hrms.entities.concretes.JobSeekers;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import kodlamaio.hrms.entities.concretes.JobsSeekers;
-
-public interface JobSeekerDao extends JpaRepository<JobsSeekers, Integer>{
-
+public interface JobSeekerDao extends JpaRepository<JobSeekers,Integer> {
+    JobSeekers getByEpostaAddress(String epostaAddress);
+    JobSeekers getByIdentificationNumber(String identificationNumber);
 }

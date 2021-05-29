@@ -1,5 +1,6 @@
 package kodlamaio.hrms.core.adapters.abstracts;
 
 public interface FakeEmailService {
-		public boolean isEmailValidation(String eposta_adress);
+    public boolean isEmailValidation(String eposta_address);
+    public boolean isEmailValidationTrue(String epsta_address);
 }
