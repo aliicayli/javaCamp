@@ -32,11 +32,12 @@ public class EmployerManager implements EmployerService {
 
     @Override
     public Result add(Employers employers) {
-       if(getByEpostaAddress(employers.getEpostaAddress()).getData()!=null){
+        if(!getByEpostaAddress(employers.getEpostaAddress()).getData().isEmpty()){
            return new ErrorResult("This eposta address already exists.");
        }
        this.employerDao.save(employers);
        return new SuccessResult("Employer was added");
+
     }
 
 }

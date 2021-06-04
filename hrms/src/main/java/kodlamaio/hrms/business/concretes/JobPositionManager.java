@@ -20,7 +20,7 @@ public class JobPositionManager implements JobPositionService {
 
     @Override
     public DataResult<List<JobPosition>> getAll() {
-        return new SuccessDataResult<List<JobPosition>>(this.jobPositionDao.findAll(),"Job positions was listed");
+        return new SuccessDataResult<List<JobPosition>>(this.jobPositionDao.findAll(),"Job positions were listed");
     }
 
 
@@ -32,7 +32,7 @@ public class JobPositionManager implements JobPositionService {
 
     @Override
     public Result add(JobPosition jobPosition) {
-        if(getByJobPosition(jobPosition.getJobPosition()).getData()!=null){
+        if(!getByJobPosition(jobPosition.getJobPosition()).getData().isEmpty()){
             return new ErrorResult("This job position address already exists.");
         }
         this.jobPositionDao.save(jobPosition);

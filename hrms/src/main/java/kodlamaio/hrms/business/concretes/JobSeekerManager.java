@@ -20,7 +20,7 @@ public class JobSeekerManager implements JobSeekerService {
 
     @Override
     public DataResult<List<JobSeekers>> getAll() {
-        return new SuccessDataResult<List<JobSeekers>>(this.jobSeekerDao.findAll(),"Job seekers was listed");
+        return new SuccessDataResult<List<JobSeekers>>(this.jobSeekerDao.findAll(),"Job seekers were listed");
     }
 
 

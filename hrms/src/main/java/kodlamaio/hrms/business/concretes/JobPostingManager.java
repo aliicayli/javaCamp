@@ -25,7 +25,7 @@ public class JobPostingManager implements JobPostingService {
 
     @Override
     public DataResult<List<JobPosting>> getAll() {
-        return new SuccessDataResult<List<JobPosting>>(this.jobPostingDao.findAll(),"Job posting was listed");
+        return new SuccessDataResult<List<JobPosting>>(this.jobPostingDao.findAll(),"Job posting were listed");
     }
 
     @Override
