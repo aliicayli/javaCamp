@@ -11,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/schools")
+
+@CrossOrigin
 public class SchoolController {
     private SchoolService schoolService;
 
@@ -27,5 +29,10 @@ public class SchoolController {
     @PostMapping("/add")
     public Result add(@RequestBody School school){
         return this.schoolService.add(school);
+    }
+
+    @GetMapping("/getbycurriculumvitaeid")
+    public DataResult<List<School>> getByCurriculumVitae_Id(int curriculumVitae){
+        return this.schoolService.getByCurriculumVitae_Id(curriculumVitae);
     }
 }

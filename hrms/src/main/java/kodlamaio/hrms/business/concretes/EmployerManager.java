@@ -29,6 +29,14 @@ public class EmployerManager implements EmployerService {
         return new SuccessDataResult<List<Employers>>(this.employerDao.getByEpostaAddress(epostaAddress));
     }
 
+//    @Override
+//    public Result confirmEmployer(int id, boolean active) {
+//        Employers value= this.employerDao.findById(id).orElse(null);
+//        value.setActive(active);
+//        this.employerDao.save(value);
+//        return new SuccessResult("Onaylandi");
+//    }
+
 
     @Override
     public Result add(Employers employers) {

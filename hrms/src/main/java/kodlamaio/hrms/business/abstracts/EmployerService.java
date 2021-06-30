@@ -10,4 +10,6 @@ public interface EmployerService {
     DataResult<List<Employers>> getAll();
     Result add(Employers employers);
     DataResult<List<Employers>> getByEpostaAddress(String epostaAddress);
+
+    //Result confirmEmployer(int id, boolean active);
 }

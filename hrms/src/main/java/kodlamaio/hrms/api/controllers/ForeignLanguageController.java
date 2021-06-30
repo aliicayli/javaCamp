@@ -11,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/foreignlanguages")
+
+@CrossOrigin
 public class ForeignLanguageController {
 
     private ForeignLanguageService foreignLanguageService;
@@ -28,5 +30,10 @@ public class ForeignLanguageController {
     @PostMapping("/add")
     public Result add(@RequestBody ForeignLanguage foreignLanguage){
         return this.foreignLanguageService.add(foreignLanguage);
+    }
+
+    @GetMapping("/getbycurriculumvitaeid")
+    public DataResult<List<ForeignLanguage>> getByCurriculumVitae_Id(@RequestParam int curriculumVitae){
+        return this.foreignLanguageService.getByCurriculumVitae_Id(curriculumVitae);
     }
 }

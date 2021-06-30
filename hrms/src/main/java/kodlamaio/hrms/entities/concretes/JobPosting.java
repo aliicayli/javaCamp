@@ -1,5 +1,6 @@
 package kodlamaio.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -47,11 +48,19 @@ public class JobPosting {
 
     @ManyToOne
     @JoinColumn(name = "city_id")
-    private City city;
+    private City cityId;
 
     @ManyToOne
     @JoinColumn(name = "employer_id")
     private Employers employers;
+
+    @OneToOne()
+    @JoinColumn(name = "work_type_id")
+    private WorkType workTypeId;
+
+    @ManyToOne
+    @JoinColumn(name = "work_time_id")
+    private WorkTime workTimeId;
 
 
 }

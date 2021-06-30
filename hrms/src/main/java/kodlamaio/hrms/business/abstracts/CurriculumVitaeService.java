@@ -4,10 +4,15 @@ import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.concretes.CurriculumVitae;
 
+
 import java.util.List;
 
 public interface CurriculumVitaeService {
     DataResult<List<CurriculumVitae>> getAll();
 
     Result add(CurriculumVitae curriculumVitae);
+
+    Result update(CurriculumVitae curriculumVitae);
+
+    DataResult<List<CurriculumVitae>> getByJobSeekerId_Id(int jobSeekerId);
 }

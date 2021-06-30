@@ -1,9 +1,8 @@
 package kodlamaio.hrms.api.controllers;
 
-import kodlamaio.hrms.business.abstracts.CityService;
+import kodlamaio.hrms.business.abstracts.WorkTimeService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
-import kodlamaio.hrms.core.utilities.results.SuccessDataResult;
-import kodlamaio.hrms.entities.concretes.City;
+import kodlamaio.hrms.entities.concretes.WorkTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,21 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/cities")
+@RequestMapping("/api/worktimes")
 
 @CrossOrigin
-public class CityController {
-    private CityService cityService;
+public class WorkTimeController {
+
+    private WorkTimeService workTimeService;
 
     @Autowired
-    public CityController (CityService cityService){
-        this.cityService=cityService;
+    public  WorkTimeController(WorkTimeService workTimeService){
+        this.workTimeService=workTimeService;
     }
 
     @GetMapping("/getall")
-    public DataResult<List<City>> getAll(){
-        return this.cityService.getAll();
+    DataResult<List<WorkTime>> getAll(){
+        return this.workTimeService.getAll();
     }
-
 
 }

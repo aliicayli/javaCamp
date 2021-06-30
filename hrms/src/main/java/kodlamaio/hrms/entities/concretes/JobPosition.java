@@ -22,4 +22,9 @@ public class JobPosition {
     @Column(name = "position_name")
     private String jobPosition;
 
+    @ManyToOne
+    @JoinColumn(name = "employer_id")
+    private Employers employers;
+
+
 }

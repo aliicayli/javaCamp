@@ -25,4 +25,7 @@ public class Users {
 
     @Column(name = "password")
     public String password;
+
+    @Column(name ="active")
+    public boolean active;
 }

@@ -32,4 +32,9 @@ public class TechnologyManager implements TechnologyService {
         this.technologyDao.save(technology);
         return new SuccessResult("Technology was added");
     }
+
+    @Override
+    public DataResult<List<Technology>> getByCurriculumVitae_Id(int curriculumVitae) {
+        return new SuccessDataResult<List<Technology>>(this.technologyDao.getByCurriculumVitae_Id(curriculumVitae));
+    }
 }

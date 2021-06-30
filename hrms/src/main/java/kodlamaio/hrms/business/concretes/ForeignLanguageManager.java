@@ -32,4 +32,11 @@ public class ForeignLanguageManager implements ForeignLanguageService {
         this.foreignLanguageDao.save(foreignLanguage);
         return new SuccessResult("Foreign language was added");
     }
+
+    @Override
+    public DataResult<List<ForeignLanguage>> getByCurriculumVitae_Id(int curriculumVitae) {
+        return new SuccessDataResult<List<ForeignLanguage>>(this.foreignLanguageDao.getByCurriculumVitae_Id(curriculumVitae));
+    }
+
+
 }

@@ -30,4 +30,9 @@ public class TechnologyController {
         return this.technologyService.add(technology);
     }
 
+    @GetMapping("getbycurriculumvitaeid")
+    public DataResult<List<Technology>> getByCurriculumVitae_Id(int curriculumVitae){
+        return this.technologyService.getByCurriculumVitae_Id(curriculumVitae);
+    }
+
 }
